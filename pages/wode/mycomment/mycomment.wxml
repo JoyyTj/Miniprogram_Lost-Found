@@ -1,0 +1,28 @@
+<view>
+  <view class="title">
+    <image class="bgpicture" src="https://i.loli.net/2020/11/15/8RswdxVi6n2Sub1.png"></image>
+  </view>
+  <view class="noPublish" style="text-align: center; font-size: 50rpx;margin-bottom: 20rpx" wx:if="{{mycomment.length === 0}}">
+    暂无评论
+  </view>
+  <view class="container" wx:for="{{mycomment}}" wx:key="_openid">
+    <navigator url="/pages/detail/detail?item_id={{item._id}}" class="goodsItem">
+      <view class="body">
+        <image class="usericon" src="{{userinfo.avatarUrl}}"></image>
+        <text class="time">{{item.time}}</text>
+        <view class="name">
+          <text class="Name">{{userinfo.nickName}}</text>
+          说：
+        </view>
+        <view class="containerofCom">
+          <view class="containeroftext">
+            <view class="Comment" type:>{{item.content}}</view>
+          </view>
+        </view>
+        <view class="containerofitem">
+          <view class="item_title">回复了:  {{item.item_title}}</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

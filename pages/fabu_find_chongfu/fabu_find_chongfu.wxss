@@ -1,0 +1,106 @@
+.v-line {
+  position: absolute;
+  top: 33rpx;
+  /* display: inline-block; */
+  border: 1rpx rgba(20, 120, 255, 0.7) solid;
+  height: 100rpx;
+  width: 6rpx;
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  background-color: rgba(20, 120, 255, 0.7);
+}
+.h-tag {
+  border-bottom: 2rpx solid rgba(20, 120, 255, 0.7);
+  margin-top: 30rpx;
+  height: 100rpx;
+}
+.tit-b {
+  margin-left: 50rpx;
+  margin-top: 5rpx;
+  font-size: 30rpx;
+  color: rgba(20, 29, 71, 0.842);
+}
+.tit {
+  margin-left: 50rpx;
+  margin-top: 5rpx;
+  font-size: 38rpx;
+  font-weight: 600;
+  color: rgba(20, 29, 71, 0.842);
+}
+page {
+  height: 100%;
+  background-color: rgba(20, 120, 255, 0.12);
+}
+.item_show {
+  height: 100%;
+  height: calc(100vh - 340rpx);
+}
+.item_show .noItem {
+  margin-top: 15rpx;
+  font-size: 38rpx;
+  font-weight: 600;
+  color: rgba(20, 29, 71, 0.842);
+  text-align: center;
+}
+.item_show .firstTab .goodsItem {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-width: 1px;
+  border: 1px solid black;
+  margin: 20rpx 20rpx;
+  padding: 15rpx;
+  border-radius: 15rpx;
+  box-shadow: 3rpx 3rpx 5rpx black;
+}
+.item_show .firstTab .goodsItem .goodsImg {
+  flex: 3;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 10rpx;
+}
+.item_show .firstTab .goodsItem .goodsImg image {
+  width: 50%;
+}
+.item_show .firstTab .goodsItem .goodsWrap {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.item_show .firstTab .goodsItem .goodsWrap .goodsTitle {
+  flex: 6;
+  color: #000000;
+  font-size: 45rpx;
+  font-weight: 600;
+  margin-left: 5rpx;
+  overflow: hidden;
+}
+.item_show .firstTab .goodsItem .goodsWrap .goodsPlace {
+  flex: 2;
+  margin-left: 10rpx;
+  color: #808080;
+}
+.item_show .firstTab .goodsItem .goodsWrap .goodsTime {
+  flex: 3;
+  margin-left: 10rpx;
+  color: #808080;
+}
+.item_show .firstTab .goodsItem .goodsDescription {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.publish_btn {
+  width: 50%;
+  background-color: rgba(20, 120, 255, 0.7);
+  border: none;
+  color: white;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  margin-right: 10rpx;
+}

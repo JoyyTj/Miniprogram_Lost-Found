@@ -1,0 +1,49 @@
+<!-- pages/wode/wode.wxml -->
+<!-- 用户属性 -->
+<view class="user_info_wrap">
+  <view class="user_img">
+    <view class="user_info">
+      <image class="user_icon" style="oblique" src="{{userinfo.avatarUrl}}"></image>
+      <view class="namecontainer">
+        <view class="user_name">{{userinfo.nickName}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 功能键 -->
+<view class="body1">
+  <view class="body2">
+    <navigator url="/pages/wode/mypublish/mypublish" class="iconfont .iconfabu2" hover-class="none">
+      <text class="wodewenben">我的发布</text>
+    </navigator>
+  </view>
+  <view class="body2">
+    <navigator url="/pages/wode/mymessage/mymessage" class="iconfont .iconpinglun" hover-class="none">
+      <text class="wodewenben">我的消息</text>
+    </navigator>
+  </view>
+  <view class="body2">
+    <navigator url="/pages/wode/mycomment/mycomment" class="iconfont .iconpinglun" hover-class="none">
+      <text class="wodewenben">我的评论</text>
+    </navigator>
+  </view>
+  <view class="body2">
+    <navigator url="/pages/wode/myclaim/myclaim" class="iconfont .iconshenqing" hover-class="none">
+      <text class="wodewenben">我的申请</text>
+    </navigator>
+  </view>
+  <view class="last1">
+    <navigator url="/pages/wode/stu_verify/stu_verify" class="iconfont .iconzhanghu" hover-class="none">
+      <text class="wodewenben">学生认证</text>
+    </navigator>
+  </view>
+</view>
+<!-- 小组信息 -->
+<view class="bottommessage" style=" margin-top: 30rpx;text-align: center;">
+  <view class="iconfont.icondibudaohanglan-" style="color:rgba(44, 85, 139, 0.547);font-size:30rpx">
+    校园失物招领系统
+  </view>
+  <view style="color:rgba(44, 85, 139, 0.547);font-size:25rpx;margin-top:10rpx;margin-bottom:30rpx">
+    第七小组提供
+  </view>
+</view>

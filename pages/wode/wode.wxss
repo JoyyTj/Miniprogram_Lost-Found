@@ -1,0 +1,122 @@
+/* pages/wode/wode.wxss */
+
+page
+/* 页面整体设置 */
+{
+  background-color: rgba(17, 110, 231, 0.123);
+}
+
+.user_img
+{  
+  height:300rpx;  
+  border:1rpx solid;    
+  border-color: rgb(20,120,255);
+  background-color: rgb(20,120,255);
+  /* box-shadow:5rpx 5rpx 10rpx #000;  */
+}
+ .namecontainer{  
+  margin-left: 260rpx;
+  margin-right: 30rpx;
+  margin-top:50rpx;
+} 
+iconfont .iconfabu2 iconfont .iconpinglun iconfont .iconpinglun iconfont .iconshenqing{
+  font-size: 35rpx;
+}
+.user_name{
+  padding-bottom: 20rpx;  
+  margin-right: 20rpx;
+  text-shadow:5rpx 5rpx 7rpx #000;    
+  font-weight: 400;
+  font-size:50rpx;
+  color: rgba(255, 255, 255, 0.836);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;   
+}
+.banben{
+  position:absolute;
+  top:950rpx;
+  left:280rpx;
+  font-size: 25rpx; 
+  font-weight: 100;
+  color: rgb(145, 141, 141);
+}
+.banben2{
+  position:absolute;
+  top:990rpx;
+  left:320rpx;
+  font-size: 23rpx;
+  font-weight: 100;
+  color: rgb(145, 141, 141);
+}
+.user_icon{  
+  box-shadow:5rpx 5rpx 10rpx #000;   
+  height:170rpx;
+  width: 170rpx;
+  position: relative;
+  left:50rpx;
+  top:185rpx;
+  border-radius: 50%;
+  border:7rpx,dotted;
+  border-color: rgba(255, 255, 255, 0.829);
+}
+
+.body1
+/*栏目主体*/{
+  background-color: white;
+  margin-top: 100rpx;
+  /* 栏目与头像上界 */
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  /* 栏目左边界 */
+  border:1rpx solid;  
+  padding-left: 30rpx;
+  border-radius: 15rpx;
+  /* 圆角 */
+  border-color: white;
+  box-shadow:5rpx 5rpx 10rpx #000;   
+}
+.body2
+/* 文本1-4设置 */
+{
+  border-bottom:1rpx solid;
+  border-bottom-color: rgb(216, 221, 221);
+  margin-right: 30rpx;
+}
+
+.yonghuid
+/* 用户id */
+{
+  margin-top: 60rpx;
+  font-size:30rpx;
+  margin-left: 260rpx;
+}
+
+.yonghulv
+/* 用户 等级*/
+{
+  font-size:30rpx;
+  margin-top: 20rpx;
+  /* LV和ID距离 */
+  margin-left: 260rpx;
+}
+navigator
+/* 链接 */
+{
+  padding-bottom: 20rpx;
+  /* 链接上界 */
+  margin-top: 20rpx;
+  margin-right: 30rpx;
+  /* 栏目行间距 */
+  box-sizing:border-box;
+}
+.wodewenben
+/* 文本格式设置 */
+{
+  font-size:35rpx;
+  margin-left: 20rpx;
+  /* 图标和文字间距 */
+  font-weight: 80;
+}
+
+

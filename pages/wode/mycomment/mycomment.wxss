@@ -1,0 +1,89 @@
+page
+/* 页面整体设置 */ {
+  background-color: rgba(17, 110, 231, 0.123);
+}
+.text {
+  font-size: 70rpx;
+}
+.Name {
+  font-weight: 600;
+}
+.title {
+  margin-bottom: 30rpx;
+}
+.bgpicture {
+  top: -5rpx;
+  width: 750rpx;
+  height: 220rpx;
+}
+.body {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 50rpx;
+  height: 300rpx;
+  border: 1rpx solid;
+  border-radius: 15rpx;
+  border-color: white;
+  background-color: white;
+  box-shadow: 5rpx 5rpx 10rpx #000;
+}
+.usericon {
+  height: 90rpx;
+  width: 90rpx;
+  position: relative;
+  left: 20rpx;
+  top: 25rpx;
+  border-radius: 50%;
+}
+.name {
+  position: relative;
+  left: 120rpx;
+  bottom: 30rpx;
+  font-size: 35rpx;
+  font-weight: 100rpx;
+  color: rgb(50, 52, 54);
+}
+.time {
+  position: relative;
+  bottom: 35rpx;
+  left: 30rpx;
+  font-size: 30rpx;
+}
+.containeroftext {
+  border: 1rpx solid;
+  border-radius: 60rpx;
+  border-color: white;
+  background-color: rgba(20, 122, 255, 0.184);
+  margin: 20rpx 20rpx;
+  margin-top: -10rpx;
+  margin-bottom: 20rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-right: 20rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+}
+.Comment {
+  display: block;
+  line-height: 40rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 35rpx;
+  color: rgba(20, 29, 71, 0.842);
+}
+.item_title {
+  position: relative;
+  bottom: 0rpx;
+  left: 30rpx;
+  color: rgb(190, 190, 197);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.containerofitem {
+  left: 10rpx;
+  height: 90rpx;
+  width: 630rpx;
+}

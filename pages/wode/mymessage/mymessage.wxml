@@ -1,0 +1,29 @@
+<!-- pages/wode/mymessage/mymessage.wxml -->
+<view class="Container">
+  <view class="title">
+    <image class="bgpicture" src="https://i.loli.net/2020/11/15/BKS3MIHiFm4dqAc.png"></image>
+  </view>
+  <view class="noPublish" style="text-align: center; font-size: 50rpx;margin-bottom: 20rpx" wx:if="{{mymessage.length === 0}}">
+    暂无消息
+  </view>
+  <view class="container" wx:for="{{mymessage}}" wx:key="_openid">
+    <navigator url="/pages/detail/detail?item_id={{item._id}}" class="goodsItem" hover-class="hover">
+      <view class="body">
+        <image class="usericon" src="{{item.commenter_icon}}"></image>
+        <text class="time">{{item.time}}</text>
+        <view class="name">
+          <text class="Name">{{item.commenter_name}}</text>
+          回复了你：
+        </view>
+        <view class="containerofCom">
+          <view class="containeroftext">
+            <view class="Comment" type:>{{item.content}}</view>
+          </view>
+        </view>
+        <view class="containerofitem">
+          <view class="item_title">回复了:  {{item.item_title}}</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

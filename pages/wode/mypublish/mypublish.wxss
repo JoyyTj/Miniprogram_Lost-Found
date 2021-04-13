@@ -1,0 +1,173 @@
+page
+/* 页面整体设置 */ {
+  background-color: rgba(17, 110, 231, 0.123);
+}
+.TTitle {
+  margin-bottom: 50rpx;
+}
+.bgpicture {
+  top: -5rpx;
+  width: 750rpx;
+  height: 220rpx;
+}
+
+.body {
+  position: relative;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 40rpx;
+  height: 240rpx;
+  border: 1rpx solid;
+  border-radius: 15rpx;
+  border-color: white;
+  background-color: white;
+  box-shadow: 3rpx 3rpx 5rpx black;
+}
+.bdycontainer {
+  position: relative;
+  bottom: 15rpx;
+  height: 240rpx;
+  /* border: 1rpx,solid;
+  border-color: black;  */
+}
+.imgcontainer {
+  position: relative;
+  left: 30rpx;
+  top: 25rpx;
+  height: 120rpx;
+  width: 1rpx;
+  border-top-left-radius: 15rpx;
+  border-bottom-left-radius: 15rpx;
+}
+.img {
+  border: 1rpx solid;
+  height: 120rpx;
+  width: 120rpx;
+  border-top-left-radius: 15rpx;
+  border-bottom-left-radius: 15rpx;
+}
+.noimg {
+  border: 1rpx dashed;
+  border-color: rgba(20, 122, 255);
+  border-top-left-radius: 15rpx;
+  border-bottom-left-radius: 15rpx;
+  height: 120rpx;
+  width: 120rpx;
+  font-size: 30rpx;
+  color: rgba(20, 122, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.islost {
+  height: 123rpx;
+  width: 40rpx;
+  position: relative;
+  left: 153rpx;
+  bottom: 96rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(245, 31, 24, 0.822);
+}
+.isntlost {
+  height: 123rpx;
+  width: 40rpx;
+  position: relative;
+  left: 153rpx;
+  bottom: 96rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(20, 122, 255, 0.8);
+}
+.title {
+  position: relative;
+  font-size: 45rpx;
+  font-weight: 600;
+  bottom: 265rpx;
+  left: 230rpx;
+  width: 450rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.description {
+  width: 430rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.textcontainer {
+  position: relative;
+  bottom: 255rpx;
+  left: 210rpx;
+  width: 420rpx;
+  padding: 10rpx 25rpx;
+  border: 1rpx solid;
+  border-radius: 40rpx;
+  border: white;
+  background-color: rgba(20, 122, 255, 0.184);
+}
+.bottommessage {
+  margin-top: 30rpx;
+  text-align: center;
+}
+.isvarified {
+  right: 2rpx;
+  width: 692rpx;
+  position: relative;
+  bottom: 58rpx;
+  border: 1rpx, solid;
+  border-color: rgba(20, 122, 255, 0.8);
+  border-bottom-left-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+  background-color: rgba(20, 122, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.isntvarified {
+  /* margin-left: 30rpx;
+  margin-right: 30rpx; */
+  right: 2rpx;
+  width: 692rpx;
+  position: relative;
+  bottom: 58rpx;
+  border: 1rpx, solid;
+  border-color: rgba(245, 31, 24, 0.829);
+  border-bottom-left-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+  background-color: rgba(245, 31, 24, 0.836);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  position: relative;
+  left: 92%;
+  top: 40rpx;
+  width: 31rpx;
+  height: 31rpx;
+  border: 1rdx, solid;
+  border-color: white;
+  background-color: white;
+  z-index: 200;
+}
+.btntext {
+  position: relative;
+  bottom: 25rpx;
+  font-size: 50rpx;
+  color: rgba(20, 122, 255, 0.534);
+}
+.hoverbtntext {
+  position: relative;
+  bottom: 20rpx;
+  font-size: 50rpx;
+  color: black;
+}

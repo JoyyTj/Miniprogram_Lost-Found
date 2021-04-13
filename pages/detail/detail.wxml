@@ -1,0 +1,131 @@
+<!-- 轮播图 -->
+<view class="index_swiper" wx:if="{{item_obj.img_url.length !== 0}}">
+  <swiper autoplay indicator-dots circular>
+    <swiper-item wx:for="{{item_obj.img_url}}" wx:key="_id" bindtap="handlePreviewImage" data-url="{{item.url}}">
+      <navigator>
+        <image src="{{item.url}}" mode="aspectFill" />
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
+<view class="index_swiper" wx:else>
+  <swiper indicator-dots>
+    <swiper-item bindtap="handlePreviewImage" data-url="{{NoImage}}">
+      <navigator>
+        <image src="{{NoImage}}" mode="aspectFit" />
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
+<!-- 轮播图结束 -->
+<!-- 标题文字开始 -->
+<view class="titleText">
+  <view class="textWrap">{{item_obj.title}}</view>
+  <view class="placeTime">
+    <view class="placeTime_place">
+      <view class="iconfont.icondidian"></view>
+      <view class="place_text">{{item_obj.place}}</view>
+    </view>
+    <view class="placeTime_time">
+      <view class="iconfont.iconico_home_committed"></view>
+      <view class="time_text">{{item_obj.upload_time}}</view>
+    </view>
+    <view class="placeTime_category">
+      <view class="iconfont.iconwupin"></view>
+      <view class="category_text">{{item_obj.category}}</view>
+    </view>
+  </view>
+</view>
+<!-- 标题文字结束 -->
+<!-- 详细信息开始 -->
+<view class="detailInfo">
+  <view class="profileName">
+    <image class="profile" src="{{comment_users_info[item_obj._openid].profile_url}}" />
+    <view class="name_verified_wrap">
+      <view class="is_verified" wx:if="{{comment_users_info[item_obj._openid].is_verified}}" style="background-color: rgba(20, 120, 255, 0.8);color: white;">
+        已认证
+      </view>
+      <view class="is_verified" wx:else style="background-color: rgba(255,255,0,0.7);color: black;">
+        未认证
+      </view>
+      <view class="userName">{{comment_users_info[item_obj._openid].name}}</view>
+    </view>
+  </view>
+  <view class="detailWrap">
+    <view class="descriptionTitle">类型详情：</view>
+    <view class="description">{{item_obj.category_detail}}</view>
+  </view>
+  <view class="detailWrap">
+    <view class="descriptionTitle">地点详情：</view>
+    <view class="description">{{item_obj.place_detail}}</view>
+  </view>
+  <view class="detailWrap">
+    <view class="descriptionTitle">事件描述：</view>
+    <view class="description">{{item_obj.description}}</view>
+  </view>
+  <view class="contactInfoTitle">联系信息：</view>
+  <view class="contactInfo">
+    <view>联系人：{{item_obj.contact_name}}</view>
+    <view wx:if="{{item_obj.contact_phone}}">联系电话：{{item_obj.contact_phone}}</view>
+    <view wx:if="{{item_obj.contact_qq}}">联系QQ：{{item_obj.contact_qq}}</view>
+    <view wx:if="{{item_obj.contact_wechat}}">联系微信：{{item_obj.contact_wechat}}</view>
+  </view>
+  <view class="applyWrap">
+    <view wx:if="{{is_applier}}">
+      <button class="applyToget_disabled" disabled="{{true}}">您已申请</button>
+    </view>
+    <view wx:else>
+      <view wx:if="{{current_user === item_obj._openid}}">
+        <view class="applyTogetView">这是您的发布</view>
+        <view class="yourPostWrap">
+          <text style="font-size: 25rpx;">请前往</text>
+          <navigator url="../../pages/wode/myclaim/myclaim" hover-class="none" open-type="navigate" style="color: rgb(20, 120, 255);font-size: 25rpx;">
+            <text style="border-bottom: 1rpx solid;border-color: rgb(20, 120, 255);">我的申请</text>
+          </navigator>
+          <text style="font-size: 25rpx;">处理</text>
+        </view>
+      </view>
+      <view wx:else>
+        <button class="applyToget" bindtap="handleApply" data-itemId="{{item_obj._id}}" data-usersinfo="{{comment_users_info}}">
+          {{item_obj.is_lost?"申请归还":"申请认领"}}
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 详细信息结束 -->
+<!-- 评论开始 -->
+<view class="commentTitle">评论</view>
+<view class="WrapAll" wx:if="{{item_obj.comments.length !== 0}}">
+  <view class="comment" wx:for="{{item_obj.comments}}">
+    <view class="commentWrap">
+      <image class="commentProfile" src="{{comment_users_info[item.user_id].profile_url}}"></image>
+      <view class="nameTimeWrap">
+        <view class="commentUserName">{{comment_users_info[item.user_id].name}}</view>
+        <view class="time">{{item.time}}</view>
+      </view>
+      <view class="commenter_name_verified_wrap">
+        <view class="commenter_is_verified" wx:if="{{comment_users_info[item_obj._openid].is_verified}}" style="background-color: rgba(20,120,255,0.7);color: white;">
+          已认证
+        </view>
+        <view class="commenter_isnt_verified" wx:else style="background-color: rgba(255,255,0,0.85);color: black;">
+          未认证
+        </view>
+      </view>
+    </view>
+    <view class="commentContent">{{item.content}}</view>
+    <!-- <view class="replyWrap">
+      <button class="reply" size="mini">回复</button>
+    </view> -->
+  </view>
+</view>
+<view class="noComments" wx:else>暂无评论</view>
+<!-- 评论结束 -->
+<!-- 底部评论框开始 -->
+<form class="comment_release" bindreset="handleSendBtn">
+  <textarea class="textInput" fixed="true" maxlength="50" cursor-spacing="15" auto-height="true" placeholder="评论(最多输入50字)..." value="{{inputVal}}" bindinput="handleInput" />
+  <view class="submitWrap">
+    <button form-type="reset" class="submitButton" hover-class="hoverSubmit" size="mini">发送</button>
+  </view>
+</form>
+<!-- 底部评论框结束 -->

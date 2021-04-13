@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="TTitle">
+    <image class="bgpicture" src="https://i.loli.net/2020/11/15/lAzsSirP1tmJgo8.png"></image>
+  </view>
+  <view class="noPublish" style="text-align: center; font-size: 50rpx;margin-bottom: 20rpx" wx:if="{{publish.length === 0}}">暂无发布</view>
+  <view class="Container">
+    <view wx:for="{{publish}}" wx:key="_id">
+      <view class="body">
+        <view bindtap="butt" class="btn" data-idx="{{index}}" hover-class="hoverbtn">
+          <text class="btntext" hover-class="hoverbtntext">×</text>
+        </view>
+        <view class="bdycontainer">
+          <view class="thingcontainer">
+            <navigator url="/pages/detail/detail?item_id={{item._id}}" class="goodsItem" hover-class="none">
+              <view class="imgcontainer">
+                <view wx:if="{{item.img_url.length!==0}}">
+                  <image class="img" src="{{item.img_url[0].url}}"></image>
+                </view>
+                <view class="noimg" wx:else>
+                  <text>暂无</text>
+                  <text>图片</text>
+                </view>
+              </view>
+            </navigator>
+            <view class="islost" wx:if="{{item.is_lost}}">
+              <text>失</text>
+              <text>物</text>
+            </view>
+            <view class="isntlost" wx:else>
+              <text>招</text>
+              <text>领</text>
+            </view>
+          </view>
+          <view class="isvarified" wx:if="{{item.is_verified}}">已通过</view>
+          <view class="isntvarified" wx:else>审核中</view>
+          <view class="title">{{item.title}}</view>
+          <view class="textcontainer">
+            <view class="description">{{item.description}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 小组信息 -->
+<view class="bottommessage" style=" margin-top: 30rpx;text-align: center;">
+  <view class="iconfont.icondibudaohanglan-" style="color:rgba(44, 85, 139, 0.547);font-size:30rpx">
+    校园失物招领系统
+  </view>
+  <view style="color:rgba(44, 85, 139, 0.547);font-size:25rpx;margin-top:10rpx;margin-bottom:30rpx">
+    第七小组提供
+  </view>
+</view>

@@ -1,0 +1,40 @@
+<!-- pages/fabu_lost_tuijian/fabu_lost_tuijian.wxml -->
+<view>
+  <!-- 标题 -->
+  <view class="h-tag">
+    <view class="tit-b">检测到以下已发布捡到物品与您将发布物品重复</view>
+    <view class="tit">是否继续发布？</view>
+    <view class="v-line"></view>
+  </view>
+  <!-- 标题结束 -->
+  <!-- Tabs开始 -->
+  <!-- 物品滑动页面开始 -->
+  <view class="item_show">
+    <scroll-view class="item_show" scroll-x="false" scroll-y="true">
+      <view class="noItem" wx:if="{{itemInfo.length === 0}}">暂无重复物品，欢迎发布~</view>
+      <view class="firstTab" wx:for="{{itemInfo}}" wx:key="_id">
+        <navigator url="/pages/detail/detail?item_id={{item._id}}" class="goodsItem">
+          <!-- 物品信息容器 -->
+          <view class="goodsWrap">
+            <!-- 标题容器 -->
+            <view class="goodsTitle">{{item.title}}</view>
+            <!-- 地点容器 -->
+            <view class="goodsPlace">{{item.place}}</view>
+            <!-- 发布时间容器 -->
+            <view class="goodsTime">{{item.upload_time}}</view>
+          </view>
+          <!-- 描述容器 -->
+          <view class="goodsDescription">{{item.description}}</view>
+          <!-- 物品图片容器 -->
+          <view class="goodsImg" wx:if="{{item.img_url.length !==0}}">
+            <image mode="widthFix" src="{{item.img_url[0].url}}" />
+          </view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 物品滑动页面结束 -->
+  <!-- Tabs结束 -->
+  <button bindtap="toPublish" class="publish_btn" size="large">继续发布</button>
+  <button bindtap="tohome" class="publish_btn" size="large">取消发布</button>
+</view>

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "Tabs": "../../components/Tabs/Tabs",
+    "placeTabs": "../../components/placeTabs/placeTabs",
+    "categoryTabs": "../../components/categoryTabs/categoryTabs"
+  },
+  "navigationBarTitleText": "失物招领首页",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

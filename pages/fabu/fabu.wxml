@@ -1,0 +1,15 @@
+<!-- pages/fabu/fabu.wxml -->
+<view class="wrapper">
+  <view bindtap="toPublish" class="old" data-type="0">
+    <view class="iconfont iconicon-test1"></view>
+    <text>我丢失了物品</text>
+    <text class="iconfont icon-jiantouarrow487"></text>
+    <view class="s_mask"></view>
+  </view>
+  <view bindtap="toPublish" class="old" data-type="1">
+    <view class="iconfont iconfangdajing"></view>
+    <text>我捡到了物品</text>
+    <view class="s_mask"></view>
+  </view>
+  <van-dialog id="van-dialog" />
+</view>

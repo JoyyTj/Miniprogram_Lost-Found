@@ -1,0 +1,22 @@
+<view wx:if='{{user_is_verified===false}}'>
+  <view class="input_container">
+    <input type="number" placeholder="请输入学号" bindinput="Handleinput"></input>
+  </view>
+  <view class="image_container">
+    <view class='img_body' wx:if='{{img===null}}'>
+      <view class='tip'>请点击添加图片 添加学生证图片</view>
+    </view>
+    <view class='img_body' wx:else>
+      <image src="{{img}}"></image>
+    </view>
+  </view>
+  <view class='addimg' bindtap='img_w_show'>添加图片</view>
+  <view class="upload_btn">
+    <button class="upload" size="mini" bindtap="upload" hover-class='hover'>上传验证</button>
+  </view>
+  <view class='introduce'>在照片上传之后需要一段时间进行审核，请耐心等待</view>
+</view>
+<view style="height:1200rpx;display: flex;flex-direction: column;justify-content: center;align-items: center" wx:else>
+  <view style="font-size:150rpx;color:rgba(44, 85, 139, 0.547)" class="iconfont.icondecoration_icon"></view>
+  <view style="color:rgba(44, 85, 139, 0.547);font-size:45rpx;font-weight:600;margin-top:20rpx">已成功认证学生身份</view>
+</view>

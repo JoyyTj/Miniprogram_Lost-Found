@@ -1,0 +1,77 @@
+<view wx:if="{{isHide}}">
+  <view wx:if="{{canIUse}}">
+    <view class='header'>
+      <image src="../../icons/indexlogo.png" style="width=400rpx;height=400rpx;"></image>
+    </view>
+    <view class='content'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像等)</text>
+    </view>
+    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+      授权登录
+    </button>
+  </view>
+  <view wx:else>请升级微信版本</view>
+</view>
+<view wx:else>
+  <view class="home_page">
+    <!-- 轮播图 -->
+    <view class="index_swiper">
+      <swiper autoplay indicator-dots circular>
+        <swiper-item wx:for="{{swiperList}}" wx:key="_id">
+          <navigator url="/pages/detail/detail?item_id={{item._id}}">
+            <image src="{{item.img_url[0].url}}" mode="aspectFill" />
+          </navigator>
+        </swiper-item>
+      </swiper>
+    </view>
+    <!-- 轮播图结束 -->
+    <!-- Tabs开始 -->
+    <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+      <placeTabs placetabs="{{placeTabs}}" bindplacetabsItemChange="handlePlaceChange" wx:if="{{showPlace}}"></placeTabs>
+      <categoryTabs categorytabs="{{categoryTabs}}" bindcategorytabsItemChange="handleCategoryChange" wx:if="{{showCategory}}"></categoryTabs>
+      <!-- 物品滑动页面开始 -->
+      <view class="item_show">
+        <scroll-view class="item_show" scroll-x="false" scroll-y="true">
+          <view wx:if="{{itemInfo_show.length === 0}}" class="noItemsData">暂无数据</view>
+          <view wx:else>
+            <view class="firstTab" wx:for="{{itemInfo_show}}" wx:key="_id">
+              <navigator url="/pages/detail/detail?item_id={{item._id}}" class="goodsItem">
+                <!-- 物品信息容器 -->
+                <view class="goodsWrap">
+                  <!-- 标题容器 -->
+                  <view class="goodsTitle">{{item.title}}</view>
+                  <view class="PlaceTimeCategoryWrap">
+                    <!-- 地点容器 -->
+                    <view class="placeWrap">
+                      <view class="iconfont.icondidian"></view>
+                      <view class="goodsPlace">{{item.place}}</view>
+                    </view>
+                    <!-- 发布时间容器 -->
+                    <view class="timeWrap">
+                      <view class="iconfont.iconico_home_committed"></view>
+                      <view class="goodsTime">{{item.upload_time}}</view>
+                    </view>
+                    <!-- 类别容器 -->
+                    <view class="categoryWrap">
+                      <view class="iconfont.iconwupin"></view>
+                      <view class="goodsCategory">{{item.category}}</view>
+                    </view>
+                  </view>
+                </view>
+                <!-- 描述容器 -->
+                <view class="goodsDescription">{{item.description}}</view>
+                <!-- 物品图片容器 -->
+                <view class="goodsImg" wx:if="{{item.img_url.length !== 0}}">
+                  <image mode="widthFix" src="{{item.img_url[0].url}}" />
+                </view>
+              </navigator>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+      <!-- 物品滑动页面结束 -->
+    </Tabs>
+    <!-- Tabs结束 -->
+  </view>
+</view>

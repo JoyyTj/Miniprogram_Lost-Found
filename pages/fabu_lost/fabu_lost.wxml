@@ -1,0 +1,182 @@
+<view>
+	<view class="goods-type">标题（必填）</view>
+	<view class="title">
+		<van-cell-group>
+			<van-field
+				maxlength="20"
+				placeholder="标题，如丢失黑色iPad（20字以内）"
+				border="{{ false }}"
+				bind:change="saveMessage"
+				data-type="title"
+				error-message="{{ title_err }}"
+			/>
+		</van-cell-group>
+	</view>
+
+	<view class="goods-type">物品类型（必填）</view>
+		<view bindtap="tapToShow_wupin" class="choose">
+			<text wx:if="{{params.category !== ''}}">{{params.category}}</text>
+			<text wx:else>请选择</text>
+			<text class="iconfont iconyoujiantou"></text>
+		</view>
+	<view class="error_msg" wx:if="{{wupin_err}}">{{wupin_err}}</view>
+	<view>
+		<van-field
+			    label="类型详情:"
+			    placeholder="如iPad（选填，10字以内）"
+			    border="{{ true }}"
+			    bind:change="saveMessage"
+			    data-type="category_detail"
+			    type="text"
+		/>
+	</view>
+		
+	<view class="goods-type">丢失地点（必填）</view>
+		<view bindtap="tapToShow_didian" class="choose">
+			<text wx:if="{{params.place !== ''}}">{{params.place}}</text>
+			<text wx:else>请选择</text>
+			<text class="iconfont iconyoujiantou"></text>
+		</view>
+	<view class="error_msg" wx:if="{{didian_err}}">{{didian_err}}</view>
+	<view>
+		<van-field
+			    label="地点详情:"
+			    placeholder="如品A101（选填，10字以内）"
+			    border="{{ true }}"
+			    bind:change="saveMessage"
+			    data-type="place_detail"
+			    type="text"
+			/>
+	</view>
+
+	<view class="goods-type">选择图片（选填）</view>
+	<view class="pictures">
+			<view class="img_item" wx:for="{{tempFilePaths}}">
+				<image mode="aspectFit" src="{{item}}" bindtap="handleImagePreview" data-url="{{item}}"/>
+				<van-icon bind:click="deletePic" data-index="{{index}}" name="close" />
+			</view>
+
+			<view bindtap="chooseImage" class="img_item upload-img">
+				<van-icon name="plus" />
+			</view>
+		</view>
+
+	<view class="goods-type">时间（必填）</view>
+		<p class="lost-found-time" bindtap="toShowDatePicker">
+				<text class="holder" wx:if="{{params.upload_time == ''}}">丢失物品时间</text>
+				<text class="time" wx:else>{{params.upload_time}}</text>
+			</p>
+
+	<view class="goods-type">联系人（必填）</view>
+	<view class="title">
+		<van-cell-group>
+			<van-field
+				maxlength="20"
+				placeholder="联系人称呼（20字以内）"
+				border="{{ false }}"t
+				bind:change="saveMessage"
+				data-type="contact_name"
+				error-message="{{ contact_name_err }}"
+			/>
+		</van-cell-group>
+	</view>
+
+	<view>
+		<view class="goods-type">联系方式（请至少填写一项）</view>
+		<van-cell-group>
+			<van-field
+			    label="QQ号 :"
+			    placeholder="请输入QQ号"
+			    error-message="{{ contact_way_err }}"
+			    border="{{ true }}"
+			    bind:change="saveMessage"
+			    data-type="contact_qq"
+			    type="number"
+			/>
+
+			<van-field
+			    label="微信号 :"
+			    placeholder="请输入微信号"
+			    error-message="{{ contact_way_err }}"
+			    border="{{ true }}"
+			    bind:change="saveMessage"
+			    data-type="contact_wechat"
+			    type="text"
+			/>
+
+			<van-field
+			    label="手机号 :"
+			    placeholder="请输入手机号"
+			    error-message="{{ phone_err }}"
+			    border="{{ true }}"
+			    bind:change="saveMessage"
+			    data-type="contact_phone"
+			    type="number"
+			/>
+		</van-cell-group>
+	</view>
+
+	<view class="goods-type">其他说明（选填）</view>
+		<view class="description">
+			<van-cell-group>
+				<van-field
+				type="textarea"
+				placeholder="物品详细描述或其他备注（100字以内）"
+				maxlength="100"
+				autosize
+				bind:change="saveMessage"
+				data-type="description"
+				border="{{ false }}"
+				/>
+			</van-cell-group>
+		</view>
+
+	<button bindtap="toPublish" class="publish_btn" size="large">确认发布</button>
+
+	<van-popup show="{{showDatePicker}}" close-on-click-overlay="true" position="bottom" bind:close="closeDatePicker">
+		<van-datetime-picker
+			type="date"
+			value="{{ currentDate }}"
+			min-date="{{ minDate }}"
+			max-date="{{ maxDate }}"
+			bind:cancel="closeDatePicker"
+		  	bind:confirm="chooseDate"
+		/>
+	</van-popup>
+
+	<van-popup
+		show="{{ showPopup_wupin }}"
+		close-on-click-overlay="{{true}}"
+		class="custom-style"
+		position="bottom"
+		bind:close="onClosePopup_wupin"
+	>
+		<van-picker
+		  show-toolbar
+		  title="物品类型"
+		  columns="{{ columns_wupin }}"
+		  bind:cancel="onClosePopup_wupin"
+		  bind:confirm="onConfirm_wupin"
+		/>
+	</van-popup>
+
+	<van-popup
+		show="{{ showPopup_didian }}"
+		close-on-click-overlay="{{true}}"
+		class="custom-style"
+		position="bottom"
+		bind:close="onClosePopup_didian"
+	>
+		<van-picker
+		  show-toolbar
+		  title="地点"
+		  columns="{{ columns_didian }}"
+		  bind:cancel="onClosePopup_didian"
+		  bind:confirm="onConfirm_didian"
+		/>
+	</van-popup>
+
+</view>
+
+
+
