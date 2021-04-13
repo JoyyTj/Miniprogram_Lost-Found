@@ -1,6 +1,6 @@
 # Miniprogram_Lost-Found
 
-We developed the Wechat miniprogram for lost and found on campus.  
+We developed a Wechat miniprogram for lost and found on campus.  
 Codes for all pages are in this repo.  
 Below provides a glimpse of how some of the pages look like.  
 <img width="150" height="280" src="https://github.com/JoyyTj/Miniprogram_Lost-Found/blob/main/Img/page_detail.jpg"/>
